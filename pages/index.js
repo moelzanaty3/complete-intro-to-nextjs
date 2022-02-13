@@ -1,14 +1,17 @@
 import React from 'react'
 
-const List = () => (
+const List = (props) => (
   <ul>
-    <li>Learn with M. Elzanaty</li>
-    <li>React JS</li>
-    <li>Next JS</li>
-    <li>Node JS</li>
-    <li>??</li>
-    <li>You will get 💰💰💰</li>
+    {props.items.map((item) => (
+      <li key={item}>{item}</li>
+    ))}
   </ul>
 )
 
-export default List
+const ListContainer = () => (
+  <List
+    items={['Learn with M. Elzanaty', 'React JS', 'Next JS', 'Node JS', '??', 'You will get 💰']}
+  />
+)
+
+export default ListContainer
