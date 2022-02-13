@@ -1,8 +1,8 @@
 import React from 'react'
 
-const List = (props) => (
+const List = ({ items }) => (
   <ul>
-    {props.items.map((item) => (
+    {items.map((item) => (
       <li key={item}>{item}</li>
     ))}
   </ul>
