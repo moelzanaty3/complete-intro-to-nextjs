@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ListFC = ({ items }) => {
+const ListFC = ({ items, ...props }) => {
   const [filteredItems, setFilteredItems] = useState(items)
 
   const handleFilterItems = (e) => {
@@ -14,7 +14,7 @@ const ListFC = ({ items }) => {
   return (
     <>
       <input onChange={handleFilterItems} />
-      <ul>
+      <ul {...props}>
         {filteredItems.map((item) => (
           <li key={item}>{item}</li>
         ))}
@@ -57,6 +57,7 @@ class ListCC extends React.Component {
 
 const ListContainer = () => (
   <ListFC
+    aria-label="My recipe to success list"
     items={['Learn with M. Elzanaty', 'React JS', 'Next JS', 'Node JS', '??', 'You will get 💰']}
   />
 )
