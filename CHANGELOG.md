@@ -1,15 +1,18 @@
 # Change Log
 
-## Navigate Between Pages: pages in nextjs
+## Navigate Between Pages
 
-### 🐻 Steps:
+### pages in nextjs
+
+#### 🐻 Steps:
+
 1. Create the posts directory under pages.
 
 2. Create a file called `first-post.js` inside the posts
 
 3. The component can have any name, but you must export it as a default export.
 
-### 📜 Notes:
+#### 📜 Notes:
 
 💰 Simply create a JS file under the pages directory, and the path to the file becomes the URL path.
 
@@ -18,9 +21,9 @@
 💰 Instead of writing HTML you write JSX and use React Components.
 
 
-## Navigate Between Pages: Link Component
+### Link Component
 
-### 🐻 Steps:
+#### 🐻 Steps:
 
 1. import the Link component from `next/link`
 
@@ -28,7 +31,7 @@
 
 3. add back-to-home link at `FirstPost` page
 
-### 📜 Notes:
+#### 📜 Notes:
 
 💰 When linking between pages on websites, you use the `<a>` HTML tag.
 
@@ -39,9 +42,9 @@
 💰 Why using a tag in nextjs Link? short answer for `SEO` https://stackoverflow.com/a/63324886/6483379
 
 
-## Client-Side Navigation
+### Client-Side Navigation
 
-### 📜 Notes:
+#### 📜 Notes:
 
 💰 The `Link` component enables `client-side navigation` between two pages in the same Next.js app.
 
@@ -58,7 +61,7 @@
 > This shows that the browser does not load the full page and client-side navigation is working.
 
 
-## Code splitting and prefetching
+#### Code splitting and prefetching
 
 💰 Next.js does code splitting automatically, so each page only loads what’s necessary for that page. That means when the homepage is rendered, the code for other pages is not served initially.
 
@@ -73,5 +76,46 @@
 💰 You create routes as files under pages and use the built-in Link component. No routing libraries are required.
 
 >  If you need to link to an external page outside the Next.js app, just use an `<a>` tag without Link. If you need to add attributes like, for example, className, add it to the a tag, not to the Link tag
+
+
+
+## Assets, Metadata, and CSS
+
+### Assets
+
+💰 Next.js can serve static assets, like images, under the top-level `public directory`. Files inside `public` can be referenced from the root of the application similar to `pages`.
+
+💰 Unoptimized Image
+
+With regular HTML, you would add your profile picture as follows:
+
+```html
+<img src="/images/profile.jpg" alt="Your Name" />
+```
+
+- However, this means you have to manually handle:
+
+- Ensuring your image is responsive on different screen sizes
+
+- Optimizing your images with a third-party tool or library
+
+- Only loading images when they enter the viewport
+
+- And more. Instead, Next.js provides an Image component out of the box to handle this for you.
+
+💰 Image Component and Image Optimization
+
+- `next/image` is an extension of the HTML `<img>` element
+
+- Next.js also has support for Image Optimization by default. This allows for resizing, optimizing, and serving images in modern formats like WebP when the browser supports it. 
+
+- Instead of optimizing images at build time, Next.js optimizes images on-demand, as users request them. Unlike static site generators and static-only solutions
+
+- Images are lazy loaded by default. That means your page speed isn't penalized for images outside the viewport. Images load as they are scrolled into viewport.
+
+
+
+
+
 
 [© NextJS Official website](https://nextjs.org/learn/basics/navigate-between-pages/client-side)
