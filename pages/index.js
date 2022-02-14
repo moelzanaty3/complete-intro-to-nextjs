@@ -1,4 +1,12 @@
+/**
+ * 🐻 Steps:
+ * 1. import the Link component from next/link
+ * 2. change title and add link to /posts/first-page
+ * 3. add back-to-home link at FirstPost page
+ */
+
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -10,7 +18,10 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Read{' '}
+          <Link href="/posts/first-post">
+            <a>this page</a>
+          </Link>
         </h1>
 
         <p className="description">
@@ -186,3 +197,11 @@ export default function Home() {
     </div>
   )
 }
+
+/**
+ * 📜 Notes:
+ * When linking between pages on websites, you use the <a> HTML tag.
+ * In Next.js, you use the Link Component from next/link to wrap the <a> tag.
+ * <Link> allows you to do client-side navigation to a different page in the application.
+ * Why using a tag in nextjs Link? short answer for SEO https://stackoverflow.com/a/63324886/6483379
+ */
