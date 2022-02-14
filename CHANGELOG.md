@@ -113,8 +113,30 @@ With regular HTML, you would add your profile picture as follows:
 
 - Images are lazy loaded by default. That means your page speed isn't penalized for images outside the viewport. Images load as they are scrolled into viewport.
 
+### Third-Party JavaScript
+
+`Third-party JavaScript` refers to any scripts that are added from a third-party source. Usually, third-party scripts are included in order to introduce newer functionality into a site that does not need to be written from scratch, such as analytics, ads, and customer support widgets.
 
 
+In addition to metadata, scripts that need to load and execute as soon as possible are usually added within the <head> of a page. Using a regular HTML `<script>` element, an external script would be added as follows:
+
+```javaScript
+
+<Head>
+  <title>First Post</title>
+  <script src="https://connect.facebook.net/en_US/sdk.js" />
+</Head>
+
+```
+
+Although this approach works, including scripts in this manner does not give a clear idea of when it would load with respect to the other JavaScript code fetched on the same page. 
+
+If a particular script is render-blocking and can delay page content from loading, this can signficiantly impact performance.
+
+
+Using the Script Component
+
+`next/script` is an extension of the HTML `<script>` element and optimizes when additional scripts are fetched and executed.
 
 
 
