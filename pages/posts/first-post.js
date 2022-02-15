@@ -1,3 +1,5 @@
+/** @jsxImportSource theme-ui */
+
 import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
@@ -5,7 +7,7 @@ import Script from 'next/script'
 
 export default function FirstPost() {
   return (
-    <>
+    <div sx={{ variant: 'containers.page' }}>
       <Head>
         <title>First Post</title>
         {/* <script src="https://connect.facebook.net/en_US/sdk.js" /> */}
@@ -33,6 +35,6 @@ export default function FirstPost() {
           <a>Back to home</a>
         </Link>
       </h2>
-    </>
+    </div>
   )
 }

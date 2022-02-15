@@ -139,5 +139,29 @@ Using the Script Component
 `next/script` is an extension of the HTML `<script>` element and optimizes when additional scripts are fetched and executed.
 
 
+## Styling 
+
+💰 Next.js comes with some styling conventions baked in, and they're pretty good. Because Next.js uses React, you can also use any other mechanism that works with React to style your apps
+
+💰 When it comes to styling, you have `global styles` and `component styles`. 
+
+- For global CSS, you have to import them at the entry point of your `app`, In the _app.jsx you can import any CSS file, and the styles will be global now.
+
+- Now, when you don't want global CSS, Next.js supports css modules. This will scope your CSS, avoiding collisions.
+
+💰 You can import a CSS module file anywhere in your app. To create a CSS module, you have to use a special syntax in the file name `styles.module.css`. 
+
+💰 Next.js has built-in support for [styled-jsx](https://github.com/vercel/styled-jsx), but you can also use other popular CSS-in-JS libraries such as [styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) or [emotion](https://github.com/vercel/next.js/tree/canary/examples/with-emotion).
+
+💰 **Writing and Importing CSS**
+
+- Next.js has [built-in support for CSS](https://nextjs.org/docs/basic-features/built-in-css-support) and Sass which allows you to import .css and .scss files.
+
+- Using popular CSS libraries like [Tailwind](https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss) CSS is also supported.
+
+> I prefer to use a different solution when styling all my React apps, which we're going to use today.
+
+[theme ui](https://theme-ui.com/) is a library that allows you to create theme objects and use them in your components. It also handles scoping and injecting the CSS into your app—pretty dope stuff.
+
 
 [© NextJS Official website](https://nextjs.org/learn/basics/navigate-between-pages/client-side)
