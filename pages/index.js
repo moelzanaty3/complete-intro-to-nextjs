@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import Head from 'next/head'
+import Link from 'next/link'
 
 import * as utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
@@ -18,7 +19,9 @@ export default function Home({ allPostsData }) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <span className={utilStyles.listItemTitle}>{title}</span>
+              <Link href="posts/[id]" as={`/posts/${id}`}>
+                <a className={utilStyles.listItemTitle}>{title}</a>
+              </Link>
               <br />
               {id}
               <br />
